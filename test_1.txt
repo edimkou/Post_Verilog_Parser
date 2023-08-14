@@ -1,0 +1,17 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : O-2018.06-SP4
+// Date      : Sat Nov 21 12:03:26 2020
+/////////////////////////////////////////////////////////////
+
+
+module s27 (A, B, C, D );
+  input A, B, C, D;
+  output G;
+  wire  n1, n2, n3;
+
+  OR2_X1 U16 ( .A1(A), .A2(B), .ZN(n1) );
+  OR2_X1 U17 ( .A1(B), .A2(C), .ZN(n2) );
+  AND2_X1 U18 ( .A1(n1), .A2(n2), .ZN(n3) );
+  OR2_X1 U19 ( .A1(n3), .A2(A), .ZN(G) );
+endmodule
